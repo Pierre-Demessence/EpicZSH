@@ -1,3 +1,8 @@
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+
 POWERLINE_NO_BLANK_LINE="true"
 #POWERLINE_HIDE_USER_NAME="true"
 POWERLINE_HIDE_HOST_NAME="true"
@@ -67,10 +72,12 @@ plugins=(git colored-man extract history sublime debian gnu-utils ruby rails rak
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# # # # # # # # # # # # # # #
+#     User configuration    #
+# # # # # # # # # # # # # # #
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
-# export MANPATH="/usr/local/man:$MANPATH"
+#export PATH="${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+#export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -92,11 +99,11 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 ##### CUSTOM #####
 
 alias rld="exec $SHELL"
-alias ed="subl"
-alias zshconf="ed ~/.zshrc"
+alias ed="em"
+alias zshrc="ed ~/.zshrc"
 
 DEFAULT_USER=demess_p
-eval `dircolors ~/.dircolors`
+#eval `dircolors ~/.dircolors`
 
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glogs="glog --stat"
