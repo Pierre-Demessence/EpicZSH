@@ -1,13 +1,14 @@
 #!/bin/sh
 echo "Making symlinks for current user"
-ln -s .oh-my-zsh ~/
-ln -s .zshrc ~/
-ln -s .dircolors ~/
+echo $PWD
+ln -fs $PWD/.oh-my-zsh -t ~/
+ln -fs $PWD/.zshrc -t ~/
+ln -fs $PWD/.dircolors -t ~/
 
 echo "Copying fonts to /usr/share/fonts/"
 sudo cp fonts/* /usr/share/fonts/
 
 echo "Making symlinks for root"
-sudo ln -s .oh-my-zsh /root/
-sudo ln -s .zshrc /root
-sudo ln -s .dircolors /root/
+sudo ln -fs $PWD/.oh-my-zsh /root/
+sudo ln -fs $PWD/.zshrc /root
+sudo ln -fs $PWD/.dircolors /root/
